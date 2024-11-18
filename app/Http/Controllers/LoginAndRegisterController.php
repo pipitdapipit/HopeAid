@@ -16,7 +16,7 @@ class LoginAndRegisterController extends Controller
     public function loginInsert(Request $req){
         $input = $req->validate([
             'email' => 'required|email',
-            'password' => 'required|min:5'
+            'password' => 'required|min:1'
         ]);
 
         if(Auth::attempt($input)){
@@ -31,6 +31,7 @@ class LoginAndRegisterController extends Controller
     }
 
     public function registerInsert(Request $req){
+
         $users = new User;
         $users->name = $req->input('username');
         $users->email = $req->input('email');
@@ -39,4 +40,10 @@ class LoginAndRegisterController extends Controller
 
         return redirect()->route('login');
     }
+
+    public function logout(){
+        Auth::logout();
+        return redirect()->route('login');
+    }
+
 }

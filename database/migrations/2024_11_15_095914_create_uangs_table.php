@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('donasi_id');
             $table->integer('nominal');
             $table->string('tipe_pembayaran');
+            
 
             $table->foreign('donasi_id')->references('id')->on('donasis')->onDelete('cascade');
             $table->timestamps();

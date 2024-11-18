@@ -13,14 +13,19 @@ return new class extends Migration
     {
         Schema::create('forms', function (Blueprint $table) {
             $table->id();
+            // $table->unsignedBigInteger('user_id');
+            // $table->unsignedBigInteger('donasi_id');
             $table->string('name');
-            $table->string('address');
-            $table->bigInteger('NIK');
-            $table->string('gender');
             $table->string('email');
-            $table->unsignedBigInteger('donasi_id');
+            // $table->string('address');
+            // $table->bigInteger('NIK');
+            $table->integer('nominal')->nullable();
+            $table->string('photo')->nullable();
+            $table->string('tipe_barang')->nullable();
+            // $table->string('no_resi')->nullable();
 
-            $table->foreign('donasi_id')->references('id')->on('donasis')->onDelete('cascade');
+            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            // $table->foreign('donasi_id')->references('id')->on('donasis')->onDelete('cascade');
             $table->timestamps();
         });
     }
