@@ -31,7 +31,7 @@ class FormController extends Controller
             $photo = $req->file('photo');
             $fileName = time().$photo->getClientOriginalName();
 
-            $photo->move('images/', $fileName);
+            $photo->move($filePath, $fileName);
 
             // $valid['photo'] = $fileName;
             $forms->photo = $fileName;

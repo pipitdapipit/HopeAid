@@ -2,10 +2,13 @@
 
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\LoginAndRegisterController;
+use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [LoginAndRegisterController::class, 'registerPage']);
-Route::post('/', [LoginAndRegisterController::class, 'registerInsert']);
+Route::get('/', [MainController::class, 'dashboard']);
+
+Route::get('/register', [LoginAndRegisterController::class, 'registerPage']);
+Route::post('/register', [LoginAndRegisterController::class, 'registerInsert']);
 Route::get('/login', [LoginAndRegisterController::class, 'loginPage'])->name('login');
 Route::post('/login', [LoginAndRegisterController::class, 'loginInsert']);
 
