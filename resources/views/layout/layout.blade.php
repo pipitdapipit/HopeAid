@@ -34,7 +34,6 @@
                   Login
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Register</a></li>
                   <li><a class="dropdown-item" href="#">Logout</a></li>
                 </ul>
               </li>
@@ -44,10 +43,12 @@
     </nav>
 
     @yield('content')
-    <div class="container-fluid" style="background-color: #B22222;">
-        <div class="card-footer text-muted container">
 
-            2 days ago
+    <div class="container-fluid mt-5 " style="background-color: #B22222; padding: 2%;">
+        <div class="card-footer text-muted container">
+            <div class="text-white items-center">
+                &copy HopeAid 2024
+            </div>
         </div>
     </div>
 </body>

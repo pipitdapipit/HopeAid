@@ -23,7 +23,7 @@
                 <label for="exampleInputPassword1" class="form-label">Password</label>
                 <input name="password" id="password" type="password" class="form-control" id="exampleInputPassword1">
             </div>
-            <div><a href="/">Register</a></div>
+            <div><a href="/register">Register</a></div>
             <button type="submit" class="btn btn-primary">Submit</button>
 
             @if (session('error'))
