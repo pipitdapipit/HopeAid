@@ -46,11 +46,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HopeAid - Login</title>
     @vite(['resources/sass/app.scss'])
+    <style>
+        body {
+            background-image: url('image/LoginRegister_background.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container min-vh-100 d-flex justify-content-center align-items-center">
-        <div class="card shadow-lg" style="width: 100%; max-width: 400px;">
+        <div class="card shadow-lg p-4" style="width: 100%; max-width: 400px; background: transparent; border: 2px solid white; backdrop-filter: blur(3px)">
             <div class="card-body">
                 <h2 class="card-title text-center mb-4" style="color: #B22222">Login</h2>
                 <form method="POST" action="/login">

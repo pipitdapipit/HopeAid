@@ -20,7 +20,7 @@ class LoginAndRegisterController extends Controller
         ]);
 
         if(Auth::attempt($input)){
-            return redirect()->route('form');
+            return redirect()->route('dashboardPage');
         } else {
             return redirect()->back()->with('error', 'Input Invalid!');
         }
@@ -43,7 +43,7 @@ class LoginAndRegisterController extends Controller
 
     public function logout(){
         Auth::logout();
-        return redirect()->route('login');
+        return redirect()->route('dashboardPage');
     }
 
 }

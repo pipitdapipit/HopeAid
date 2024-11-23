@@ -74,7 +74,7 @@
                             </div>
 
                             <label class="fw-bold">Gambar QR</label>
-                            
+
                             <div class="mb-3">
                                 <label for="formFile" class="form-label">Bukti Pembayaran</label>
                                 <input class="form-control" type="file" name="photo" id="photo" accept=".jpeg, .png, .jpg">
@@ -88,15 +88,15 @@
                         </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>
-                <div>
-                    @auth
-                    <form method="POST" action="/logout">
-                        @csrf
-                        <button type="submit">Log Out</button>
-                    </form>
-                    @endauth
-                </div>
             </form>
+            <div>
+                @auth
+                <form method="POST" action="/logout">
+                    @csrf
+                    <button type="submit">Log Out</button>
+                </form>
+                @endauth
+            </div>
         </div>
 
     {{-- <script>
