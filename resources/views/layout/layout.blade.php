@@ -24,7 +24,11 @@
                 <a class="nav-link" href="#">Artikel</a>
               </li>
               <li class="nav-item">
+<<<<<<< HEAD
+                <a class="nav-link" href="/documentation">Documentation</a>
+=======
                 <a class="nav-link" href="#">Documentation</a>
+>>>>>>> fc66ec259a50d2cca9c70b0f2ce1d4fe794266e3
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Support</a>
@@ -34,6 +38,7 @@
                   Login
                 </a>
                 <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Register</a></li>
                   <li><a class="dropdown-item" href="#">Logout</a></li>
                 </ul>
               </li>
@@ -43,15 +48,17 @@
     </nav>
 
     @yield('content')
-
-    <div class="container-fluid mt-5 " style="background-color: #B22222; padding: 2%;">
+    <div class="container-fluid" style="background-color: #B22222;">
         <div class="card-footer text-muted container">
-            <div class="text-white items-center">
-                &copy HopeAid 2024
-            </div>
+
+            2 days ago
         </div>
     </div>
 </body>
 
+<<<<<<< HEAD
+{{-- <script src="{{ asset('bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js') }}"></script> --}}
+=======
 <script src="{{ asset('bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js') }}"></script>
+>>>>>>> fc66ec259a50d2cca9c70b0f2ce1d4fe794266e3
 </html>
