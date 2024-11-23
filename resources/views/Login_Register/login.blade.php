@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -32,6 +32,51 @@
         </form>
     </div>
 
+</body>
+
+</html> --}}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HopeAid - Login</title>
+    @vite(['resources/sass/app.scss'])
+</head>
+
+<body>
+    <div class="container min-vh-100 d-flex justify-content-center align-items-center">
+        <div class="card shadow-lg" style="width: 100%; max-width: 400px;">
+            <div class="card-body">
+                <h2 class="card-title text-center mb-4" style="color: #B22222">Login</h2>
+                <form method="POST" action="/login">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label" style="color: #B22222;">Email address</label>
+                        <input name="email" id="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label" style="color: #B22222;">Password</label>
+                        <input name="password" id="password" type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="text-center mb-3">
+                        <a href="/register" class="text-decoration-none" style="color: grey;">Dont have account? Register</a>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-danger">Submit</button>
+                    </div>
+
+                    @if (session('error'))
+                        <p class="text-danger"> {{ session('error') }} </p>
+                    @endif
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
