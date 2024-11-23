@@ -16,8 +16,6 @@ Route::post('/logout', [LoginAndRegisterController::class, 'logout']);
 
 Route::get('/form', [FormController::class, 'formPage'])->name('form');
 Route::post('/form', [FormController::class, 'formInsert']);
-<<<<<<< HEAD
 
 Route::get('/documentation', [MainController::class, 'documentation'])->name('page.documentation');
-=======
->>>>>>> fc66ec259a50d2cca9c70b0f2ce1d4fe794266e3
+Route::get('/artikel', [ArticleController::class, 'getArticle'])->name('articlePage');

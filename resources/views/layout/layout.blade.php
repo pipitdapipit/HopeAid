@@ -21,14 +21,10 @@
                 <a class="nav-link active ms-3" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Artikel</a>
+                <a class="nav-link" href="{{ route('articlePage') }}">Artikel</a>
               </li>
               <li class="nav-item">
-<<<<<<< HEAD
                 <a class="nav-link" href="/documentation">Documentation</a>
-=======
-                <a class="nav-link" href="#">Documentation</a>
->>>>>>> fc66ec259a50d2cca9c70b0f2ce1d4fe794266e3
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Support</a>
@@ -56,9 +52,5 @@
     </div>
 </body>
 
-<<<<<<< HEAD
 {{-- <script src="{{ asset('bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js') }}"></script> --}}
-=======
-<script src="{{ asset('bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js') }}"></script>
->>>>>>> fc66ec259a50d2cca9c70b0f2ce1d4fe794266e3
 </html>
