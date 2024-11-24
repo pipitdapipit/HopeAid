@@ -7,8 +7,21 @@
     <title>@yield('title')</title>
     @vite(['resources/sass/app.scss'])
     <style>
-        body {
-            background: #F5F5F5
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            background: #F5F5F5;
+        }
+        main {
+            flex: 1;
+        }
+        footer {
+            background-color: #7AB2D3;
+            padding: 2%;
+            margin-top: 3rem;
+            color: #DFF2EB;
         }
     </style>
     {{-- <link rel="stylesheet" href="{{ asset('bootstrap-5.0.2-dist/css/bootstrap.min.css') }}"> --}}
@@ -55,15 +68,13 @@
         </div>
     </nav>
 
-    @yield('content')
+    <main>
+      @yield('content')
+    </main>
 
-    <div class="container-fluid mt-5 " style="background-color: #7AB2D3; padding: 2%;">
-        <div class="card-footer text-muted container">
-            <div class="d-flex justify-content-center" style="color: #DFF2EB">
-                &copy 2024 HopeAid. All rights reserved.
-            </div>
-        </div>
-    </div>
+    <footer class="text-center">
+      &copy; 2024 HopeAid. All rights reserved.
+    </footer>
 </body>
 
 <script src="{{ asset('bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js') }}"></script>
