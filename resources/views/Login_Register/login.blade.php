@@ -48,7 +48,7 @@
     @vite(['resources/sass/app.scss'])
     <style>
         body {
-            background-image: url('image/LoginRegister_background.jpg');
+            background-image: url('image/natural-disaster.jpg');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position: center;
@@ -66,11 +66,11 @@
                     @csrf
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label text-danger">Email address</label>
-                        <input name="email" id="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="border: 1px solid #B22222">
+                        <input name="email" id="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="border: 1px solid #B22222" required>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label text-danger">Password</label>
-                        <input name="password" id="password" type="password" class="form-control" id="exampleInputPassword1" style="border: 1px solid #B22222">
+                        <input name="password" id="password" type="password" class="form-control" id="exampleInputPassword1" style="border: 1px solid #B22222" required>
                     </div>
                     <div class="text-center mb-3">
                         Dont have account?
@@ -80,10 +80,10 @@
                         <button type="submit" class="btn btn-danger">Submit</button>
                     </div>
 
-                    @if (session('error'))
-                        <p class="text-danger"> {{ session('error') }} </p>
-                    @endif
                 </form>
+                @if (session('error'))
+                    <p class="text-danger"> {{ session('error') }} </p>
+                @endif
             </div>
         </div>
     </div>

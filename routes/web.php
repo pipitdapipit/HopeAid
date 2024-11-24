@@ -22,9 +22,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/documentation', [MainController::class, 'documentationPage'])->name('page.documentation');
     Route::get('/article', [MainController::class, 'articlePage']);
 
-    //Route dibawah hanya bisa diakses oleh akun yang punya role admin
 });
 
+//Route dibawah hanya bisa diakses oleh akun yang punya role admin
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin', [AdminController::class, 'adminDashboard'])->name('admin_dashboard');
 });

@@ -48,7 +48,7 @@
     @vite(['resources/sass/app.scss'])
     <style>
         body {
-            background-image: url('image/LoginRegister_background.jpg');
+            background-image: url('image/natural-disaster.jpg');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position: center;

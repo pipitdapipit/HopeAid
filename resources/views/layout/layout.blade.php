@@ -34,21 +34,22 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">Support</a>
               </li>
-
-              <li class="nav-item dropdown d-flex align-items-center" style="margin-left: 38rem">
-                  @auth
-                    Welcome,
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    {{ $user->name }}
-                    </a>
-                    <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Profile</a></li>
-                    <li><a class="dropdown-item" href="/logout">Logout</a></li>
-                    </ul>
-                @else
-                    <a class="nav-link" href="/login">Login</a>
-                @endauth
-              </li>
+            </ul>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item navbar-nav dropdown d-flex align-items-center">
+                    @auth
+                      Welcome,
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      {{ $user->name }}
+                      </a>
+                      <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Profile</a></li>
+                      <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                      </ul>
+                  @else
+                      <a class="nav-link" href="/login">Login</a>
+                  @endauth
+                </li>
             </ul>
           </div>
         </div>

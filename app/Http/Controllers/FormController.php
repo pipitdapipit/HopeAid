@@ -10,7 +10,7 @@ class FormController extends Controller
 {
     public function formPage(){
         $user = Auth::user();
-        return view('form', compact('user'));
+        return view('userpage.form', compact('user'));
     }
 
     public function formInsert(Request $req){
@@ -20,7 +20,7 @@ class FormController extends Controller
         //     'photo' => 'image|mimes:png,jpg,jpeg,gif|max:2048'
         // ]);
 
-        $filePath = public_path('images');
+        $filePath = public_path('bukti/');
         $forms = new Form;
         $forms->name = Auth::user()->name;
         $forms->email = Auth::user()->email;

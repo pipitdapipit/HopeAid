@@ -4,6 +4,6 @@
 
 @section('content')
 
-AAAAAAAAAAAA
+Masih Kosong Coy
 
 @endsection
