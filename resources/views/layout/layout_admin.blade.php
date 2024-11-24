@@ -23,9 +23,9 @@
           <div class="collapse navbar-collapse ms-5 fs-5" id="navbarNavDropdown">
             <ul class="navbar-nav gap-5">
               <li class="nav-item">
-                <a class="nav-link active ms-3" aria-current="page" href="/">Home</a>
+                <a class="nav-link active ms-3" aria-current="page" href="/">Data Transaction</a>
               </li>
-              <li class="nav-item">
+              {{-- <li class="nav-item">
                 <a class="nav-link" href="/article">Artikel</a>
               </li>
               <li class="nav-item">
@@ -33,7 +33,7 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Support</a>
-              </li>
+              </li> --}}
 
               <li class="nav-item dropdown d-flex align-items-center" style="margin-left: 38rem">
                   @auth

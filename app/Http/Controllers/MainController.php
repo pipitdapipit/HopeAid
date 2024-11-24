@@ -9,17 +9,24 @@ class MainController extends Controller
 {
     public function dashboard(){
         $user = Auth::user();
-        return view('page.dashboard', compact('user'));
+        return view('userpage.dashboard', compact('user'));
     }
 
     public function articlePage(){
-        return view('page.article');
+        $user = Auth::user();
+        return view('userpage.article', compact('user'));
     }
 
     public function documentationPage(){
+        $user = Auth::user();
         $documentations = Documentation::all();
 
-        return view('page.documentation', compact('documentations'));
+        return view('userpage.documentation', compact('documentations', 'user'));
+    }
+
+    public function logout(){
+        Auth::logout();
+        return redirect()->route('login');
     }
 }
 

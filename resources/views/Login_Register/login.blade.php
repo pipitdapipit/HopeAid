@@ -59,21 +59,22 @@
 
 <body>
     <div class="container min-vh-100 d-flex justify-content-center align-items-center">
-        <div class="card shadow-lg p-4" style="width: 100%; max-width: 400px; background: transparent; border: 2px solid white; backdrop-filter: blur(3px)">
+        <div class="card shadow-lg p-4" style="width: 100%; max-width: 400px;">
             <div class="card-body">
-                <h2 class="card-title text-center mb-4" style="color: #B22222">Login</h2>
+                <h2 class="card-title text-center mb-4 text-danger">Login</h2>
                 <form method="POST" action="/login">
                     @csrf
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label" style="color: #B22222;">Email address</label>
-                        <input name="email" id="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <label for="exampleInputEmail1" class="form-label text-danger">Email address</label>
+                        <input name="email" id="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="border: 1px solid #B22222">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label" style="color: #B22222;">Password</label>
-                        <input name="password" id="password" type="password" class="form-control" id="exampleInputPassword1">
+                        <label for="exampleInputPassword1" class="form-label text-danger">Password</label>
+                        <input name="password" id="password" type="password" class="form-control" id="exampleInputPassword1" style="border: 1px solid #B22222">
                     </div>
                     <div class="text-center mb-3">
-                        <a href="/register" class="text-decoration-none" style="color: grey;">Dont have account? Register</a>
+                        Dont have account?
+                        <a href="/register" class="text-decoration-none fw-bold text-danger">Register</a>
                     </div>
                     <div class="d-grid">
                         <button type="submit" class="btn btn-danger">Submit</button>

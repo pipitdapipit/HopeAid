@@ -20,7 +20,13 @@ class LoginAndRegisterController extends Controller
         ]);
 
         if(Auth::attempt($input)){
-            return redirect()->route('dashboardPage');
+            if(Auth::user()->role === 'admin'){
+                return redirect()->route('admin_dashboard');
+            } else {
+                return redirect()->route('dashboardPage');
+            }
+
+            // return redirect()->route('admin_dashboard');
         } else {
             return redirect()->back()->with('error', 'Input Invalid!');
         }
@@ -36,14 +42,9 @@ class LoginAndRegisterController extends Controller
         $users->name = $req->input('username');
         $users->email = $req->input('email');
         $users->password = Hash::make($req->input('password'));
+        $users->role = 'user';
         $users->save();
 
         return redirect()->route('login');
     }
-
-    public function logout(){
-        Auth::logout();
-        return redirect()->route('dashboardPage');
-    }
-
 }
