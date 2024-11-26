@@ -27,4 +27,11 @@ Route::middleware(['auth'])->group(function () {
 //Route dibawah hanya bisa diakses oleh akun yang punya role admin
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin', [AdminController::class, 'adminDashboard'])->name('admin_dashboard');
+    Route::get('/donasi', 'App\Http\Controllers\DonasiController@index')->name('index.index');
+    route::get('/donasi/create', 'App\Http\Controllers\DonasiController@create')->name('index.create');
+    route::post('/donasi/store', action: 'App\Http\Controllers\DonasiController@store')->name('index.store');
+    route::get('/donasi/edit{id}', 'App\Http\Controllers\DonasiController@edit')->name('index.edit');
+    route::put('/donasi/update{id}', 'App\Http\Controllers\DonasiController@update')->name('index.update');
+    route::delete('/donasi/delete{id}', 'App\Http\Controllers\DonasiController@destroy')->name('index.destroy');
+
 });
