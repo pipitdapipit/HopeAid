@@ -19,14 +19,25 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/form', [FormController::class, 'formPage'])->name('form');
     Route::post('/form', [FormController::class, 'formInsert']);
 
-    Route::get('/documentation', [MainController::class, 'documentationPage'])->name('page.documentation');
+    Route::get('/documentation', [MainController::class, 'documentationPage']);
     Route::get('/article', [MainController::class, 'articlePage']);
 
 });
 
 //Route dibawah hanya bisa diakses oleh akun yang punya role admin
 Route::middleware(['auth', 'admin'])->group(function () {
+    //Dashboard Route
     Route::get('/admin', [AdminController::class, 'adminDashboard'])->name('admin_dashboard');
+    Route::get('/admin/create-donation', [AdminController::class, 'createDonation']);
+    Route::post('/admin/create-donation', [AdminController::class, 'insertDonation']);
+    Route::post('/admin/delete-donation/{id}', [AdminController::class, 'deleteDonation']);
+
+    //Documentation Route
+    Route::get('/admin/documentation', [AdminController::class, 'documentPage'])->name('documentation_page');
+    Route::get('/admin/documentation/create-documentation', [AdminController::class, 'createDocum']);
+    Route::post('/admin/documentation/create-documentation', [AdminController::class, 'insertDocumentation']);
+    Route::post('/admin/documentation/create-documentation/{id}', [AdminController::class, 'deleteDocumentation']);
+
     Route::get('/donasi', 'App\Http\Controllers\DonasiController@index')->name('index.index');
     route::get('/donasi/create', 'App\Http\Controllers\DonasiController@create')->name('index.create');
     route::post('/donasi/store', action: 'App\Http\Controllers\DonasiController@store')->name('index.store');

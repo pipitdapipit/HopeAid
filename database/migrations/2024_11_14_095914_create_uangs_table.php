@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use League\CommonMark\Reference\Reference;
 
 return new class extends Migration
 {
@@ -13,12 +14,13 @@ return new class extends Migration
     {
         Schema::create('uangs', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('donasi_id');
+            $table->unsignedBigInteger('jenis_donasi_id');
+            $table->unsignedBigInteger('user_id');
             $table->integer('nominal');
             $table->string('tipe_pembayaran');
-            
 
-            $table->foreign('donasi_id')->references('id')->on('donasis')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('jenis_donasi_id')->references('id')->on('jenis_donasis')->onDelete('cascade');
             $table->timestamps();
         });
     }

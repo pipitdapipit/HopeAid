@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('documentations', function (Blueprint $table) {
             $table->id();
+            $table->string('judul_dokum');
+            $table->string('deskripsi_dokum');
+            $table->string('photo_dokum');
             $table->timestamps();
         });
     }

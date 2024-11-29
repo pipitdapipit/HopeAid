@@ -5,11 +5,11 @@
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item active">Dashboard</li>
         </ol>
- 
+
         <div class="card mb-4">
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>
-                Tambah data
+                Add Donation
             </div>
             <div class="card-body">
                 <form action="{{ route('index.store') }}" method="POST" enctype="multipart/form-data">

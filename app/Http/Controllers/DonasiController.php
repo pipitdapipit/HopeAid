@@ -14,7 +14,7 @@ class DonasiController extends Controller
         $user = Auth::user();
         return view('adminpage.donasi', compact('user','donasi'));
     }
-    
+
     public function create(){
         return view('adminpage.create_donasi');
     }
@@ -27,11 +27,11 @@ class DonasiController extends Controller
     [
         'jenis_donasi.required' => 'Jenis Donasi wajib diisi',
     ]);
-    
+
     DB::table('donasis')->insert([
         'jenis_donasi'=>$request->jenis_donasi,
     ]);
-    
+
     return redirect()->route('index.index');
     }
     public function edit(Donasi $id)
@@ -49,7 +49,7 @@ class DonasiController extends Controller
     [
         'jenis_donasi.required' => 'Jenis Donasi wajib diisi',
     ]);
- 
+
     DB::table('donasis')->where('id',$id)->update([
         'jenis_donasi'=>$request->jenis_donasi,
     ]);
@@ -58,10 +58,10 @@ class DonasiController extends Controller
 public function destroy(Donasi $id)
 {
     $id->delete();
-    
+
     return redirect()->route(route: 'index.index')
             ->with('success','Data berhasil di hapus' );
 }
 
-    
+
 }

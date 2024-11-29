@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="container min-vh-100 d-flex justify-content-center align-items-center">
-    <form method="POST" action="/form">
+    <form method="POST" action="/form" enctype="multipart/form-data">
         @csrf
         <div class="fs-4">Form</div>
             <div class="mb-3">
@@ -44,42 +44,42 @@
                 </div> --}}
 
                 {{-- <div id="uang-dropdown" style="display: none;"> --}}
-                <div id="uang-dropdown">
-                    <label for="amount">Pilih Nominal</label>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="nominal-radio" id="nominal" value="10000">
-                            <label class="form-check-label" for="flexRadioDefault1">
-                            Rp. 10.000
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="nominal-radio" value="20000">
-                            <label class="form-check-label" for="flexRadioDefault1">
-                            Rp. 20.000
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="nominal-radio" value="30000">
-                            <label class="form-check-label" for="flexRadioDefault1">
-                            Rp. 30.000
-                            </label>
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label"> Nominal Lain </label>
-                            <input name="nominal" id="nominal" type="number" class="form-control" id="exampleInputPassword1">
-                        </div>
+            <div id="uang-dropdown">
+                <label for="amount">Pilih Nominal</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="nominal-radio" id="nominal" value="10000">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                        Rp. 10.000
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="nominal-radio" value="20000">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                        Rp. 20.000
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="nominal-radio" value="30000">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                        Rp. 30.000
+                        </label>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label"> Nominal Lain </label>
+                        <input name="nominal" id="nominal" type="number" class="form-control" id="exampleInputPassword1">
+                    </div>
 
-                        <label class="fw-bold"> --- Gambar QR ---</label>
+                    <label class="fw-bold"> --- Gambar QR ---</label>
 
-                        <div class="mb-3">
-                            <label for="formFile" class="form-label">Bukti Pembayaran</label>
-                            <input class="form-control" type="file" name="photo" id="photo" accept=".jpeg, .png, .jpg">
-                          </div>
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label">Bukti Pembayaran</label>
+                        <input class="form-control" type="file" name="photo" accept=".jpeg, .png, .jpg">
+                      </div>
 
-                          <label>Tipe Barang</label>
-                          <select id="choice" name="choice">
-                              <option value="Pakaian">Pakaian</option>
-                              <option value="Obat">Obat</option>
+                    <label>Tipe Barang</label>
+                      <select id="choice" name="choice">
+                          <option value="Pakaian">Pakaian</option>
+                          <option value="Obat">Obat</option>
                           </select>
                     </div>
 

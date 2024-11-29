@@ -6,7 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Barang extends Model
 {
-    public function donasi(){
-        return $this->belongsTo(Donasi::class);
+    public function jenisdonasi(){
+        return $this->belongsTo(JenisDonasi::class);
+    }
+
+    public function users(){
+        return $this->belongsTo(User::class);
     }
 }

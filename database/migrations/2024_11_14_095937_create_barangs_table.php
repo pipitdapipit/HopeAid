@@ -11,22 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('forms', function (Blueprint $table) {
+        Schema::create('barangs', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('donasi_id');
-            $table->string('name');
-            $table->string('email');
-            // $table->string('address');
-            // $table->bigInteger('NIK');
-            $table->integer('nominal')->nullable();
-            $table->string('photo')->nullable();
-            $table->string('tipe_barang')->nullable();
             $table->unsignedBigInteger('jenis_donasi_id');
-            // $table->string('no_resi')->nullable();
+            $table->unsignedBigInteger('user_id');
+            $table->string('tipe_barang');
+            $table->string('No_Resi');
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('donasi_id')->references('id')->on('donasis')->onDelete('cascade');
             $table->foreign('jenis_donasi_id')->references('id')->on('jenis_donasis')->onDelete('cascade');
             $table->timestamps();
         });
@@ -37,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('forms');
+        Schema::dropIfExists('barangs');
     }
 };

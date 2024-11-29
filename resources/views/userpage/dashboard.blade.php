@@ -32,13 +32,35 @@
   </div>
 </div>
 
-<div class="card ms-5 mt-5" style="width: 18rem;">
-    <img src="https://via.placeholder.com/500x300" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+@if ($donasi->count() > 0)
+<div class="container">
+    <div class="row">
+        @foreach ($donasi as $item)
+        <div class="col-4">
+            <div class="card mt-5">
+                <img src="{{ asset('image_donation/'.$item->donasi_photo) }}" class="card-img-top" alt="..." height="250">
+
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">{{ $item->judul_donasi }}</h5>
+                    <p class="card-text">{{ $item->deskripsi }}</p>
+                    <h5 class="card-text fw-bold">Target Donasi: Rp.{{ number_format($item->target, 2, ',', '.') }}</h5>
+                    <h5 class="card-text fw-bold">Terkumpul:</h5>
+                    <div class="progress mb-3" role="progressbar" aria-label="Success example" aria-valuenow="{{ ($item->collected/$item->target)*100 }}" aria-valuemin="0" aria-valuemax="{{ $item->target }}">
+                        <div class="progress-bar bg-success" style="width: {{ ($item->collected/$item->target)*100 }}%">{{ round($item->collected/$item->target,3)*100 }}%</div>
+                    </div>
+                    <div class="d-grid">
+                        <a href="#" class="btn btn-primary">Ayo Donasi!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endforeach
     </div>
-  </div>
+</div>
+@else
+    <div class="container d-flex justify-content-center mt-5">
+        <h3>Tidak ada Donasi yang tersedia!</h3>
+    </div>
+@endif
 
 @endsection

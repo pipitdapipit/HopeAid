@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 use App\Models\Documentation;
+use App\Models\Donasi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class MainController extends Controller
 {
     public function dashboard(){
+        $donasi = Donasi::all();
         $user = Auth::user();
-        return view('userpage.dashboard', compact('user'));
+        return view('userpage.dashboard', compact('user', 'donasi'));
     }
 
     public function articlePage(){
