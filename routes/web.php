@@ -37,6 +37,12 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/documentation/create-documentation', [AdminController::class, 'createDocum']);
     Route::post('/admin/documentation/create-documentation', [AdminController::class, 'insertDocumentation']);
     Route::post('/admin/documentation/create-documentation/{id}', [AdminController::class, 'deleteDocumentation']);
+    Route::get('/admin/documentation/update-documentation/{id}', [AdminController::class, 'updateDocumPage']);
+    Route::post('/admin/documentation/update-documentation/{id}', [AdminController::class, 'updateDocumentation']);
+
+    //Account Page
+    Route::get('/admin/documentation/all-accounts', [AdminController::class, 'allAccountsPage']);
+
 
     Route::get('/donasi', 'App\Http\Controllers\DonasiController@index')->name('index.index');
     route::get('/donasi/create', 'App\Http\Controllers\DonasiController@create')->name('index.create');

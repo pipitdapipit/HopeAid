@@ -38,7 +38,7 @@
         @foreach ($donasi as $item)
         <div class="col-4">
             <div class="card mt-5">
-                <img src="{{ asset('image_donation/'.$item->donasi_photo) }}" class="card-img-top" alt="..." height="250">
+                <img src="{{ asset('image_donation/'.$item->donasi_photo) }}" class="card-img-top" alt="..." height="350">
 
                 <div class="card-body">
                     <h5 class="card-title fw-bold">{{ $item->judul_donasi }}</h5>

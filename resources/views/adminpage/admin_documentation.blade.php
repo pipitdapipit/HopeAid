@@ -5,9 +5,9 @@
 @section('content')
 
 <div class="container-fluid px-4">
-    <h1 class="mt-4">Dashboard</h1>
+    <h1 class="mt-4">Documentation</h1>
     <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item active">Dashboard</li>
+        <li class="breadcrumb-item active">Documentation Page</li>
     </ol>
 
     <div class="card mb-4">
@@ -45,8 +45,7 @@
                         <td><img src="{{ asset('image_documentation/'.$item->photo_dokum) }}" alt="" width="250"></td>
                         @endif
                         <td>
-                            {{-- <a href="{{ route('index.edit', $item->id) }}" class="btn btn-sm btn-warning">edit</a> --}}
-                            <a href="#" class="btn btn-sm btn-warning">Update</a>
+                            <a href="/admin/documentation/update-documentation/{{ $item->id }}" class="btn btn-sm btn-warning">Update</a>
                             <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $item->id }}">
                                 Delete
                             </button>
@@ -61,7 +60,7 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    Apakah anda yakin akan menghapus data <span class="fw-bold">{{ $item->nama }}</span>
+                                    Apakah anda yakin akan menghapus data <span class="fw-bold">{{ $item->judul_dokum }}</span>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

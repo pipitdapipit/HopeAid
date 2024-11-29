@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Documentation;
 use App\Models\Donasi;
 use App\Models\Form;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -75,7 +76,7 @@ class AdminController extends Controller
             'photo_dokum' => 'image|mimes:png,jpg,jpeg,gif|max:2048'
         ]);
 
-        $publicPath = public_path('dokumentation/');
+        $publicPath = public_path('image_documentation/');
         $docum = new Documentation;
         $docum->judul_dokum = $req->input('judul_dokum');
         $docum->deskripsi_dokum = $req->input('deskripsi_dokum');
@@ -100,47 +101,40 @@ class AdminController extends Controller
             ->with('success','Data berhasil di hapus' );
     }
 
-//     public function store(Request $request){
-//         $request->validate([
-//             'jenis_donasi' => 'required|max:45',
-//         ],
-//         [
-//             'jenis_donasi.required' => 'Jenis Donasi wajib diisi',
-//         ]);
+    public function updateDocumPage(Documentation $id){
+        return view('adminpage.updateDocum', compact('id'));
+    }
 
-//         DB::table('donasis')->insert([
-//             'jenis_donasi'=>$request->jenis_donasi,
-//         ]);
+    public function updateDocumentation(Request $req, string $id){
+        $req->validate([
+            'judul_dokum' => 'required|min:5',
+            'deskripsi_dokum' => 'required|min:5',
+            'photo_dokum' => 'image|mimes:png,jpg,jpeg,gif|max:2048'
+        ]);
 
-//         return redirect()->route('index.index');
-//     }
+        $publicPath = public_path('image_documentation/');
+        $update_docum = Documentation::findOrFail($id);
+        $update_docum->judul_dokum = $req->input('judul_dokum');
+        $update_docum->deskripsi_dokum = $req->input('deskripsi_dokum');
 
-//     public function edit(Donasi $id){
-//         //
-//         return view('adminpage.edit_donasi', compact('id'));
-//     }
+        if($req->hasFile('photo_dokum')){
+            $photo = $req->file('photo_dokum');
+            $fileName = time().$photo->getClientOriginalName();
+            $photo->move($publicPath, $fileName);
 
-//     public function update(Request $request, string $id){
-//         // validasi data
-//         $request->validate([
-//             'jenis_donasi' => 'required|max:45',
-//         ],
-//         [
-//             'jenis_donasi.required' => 'Jenis Donasi wajib diisi',
-//         ]);
+            if($fileName !== $update_docum->photo_dokum){
+                $update_docum->photo_dokum = $fileName;
+            }
+        }
 
-//         DB::table('donasis')->where('id',$id)->update([
-//             'jenis_donasi'=>$request->jenis_donasi,
-//         ]);
+        $update_docum->save();
 
-//         return redirect()->route('index.index');
-//     }
+        return redirect()->route('documentation_page');
+    }
 
-//     public function destroy(Donasi $id){
-//     $id->delete();
-
-//     return redirect()->route(route: 'index.index')
-//             ->with('success','Data berhasil di hapus' );
-// }
+    public function allAccountsPage(){
+        $account = User::all()->where('role', 'like', 'user');
+        return view('adminpage.admin_account', compact('account'));
+    }
 
 }

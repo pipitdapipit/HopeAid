@@ -7,7 +7,7 @@
 <div class="container-fluid px-4">
     <h1 class="mt-4">Dashboard</h1>
     <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item active">Dashboard</li>
+        <li class="breadcrumb-item active">Dashboard Page</li>
     </ol>
 
     <div class="card mb-4">
@@ -48,7 +48,7 @@
                         <td>Rp. {{ number_format($item->target, 2, ',', '.') }}</td>
                         <td>Rp. {{ number_format($item->collected, 2, ',', '.') }}</td>
                         @if ($item->donasi_photo)
-                        <td><img src="{{ asset('donation/'.$item->donasi_photo) }}" width="100"></td>
+                        <td><img src="{{ asset('image_donation/'.$item->donasi_photo) }}" width="100"></td>
                         @endif
                         <td>
                             {{-- <a href="{{ route('index.edit', $item->id) }}" class="btn btn-sm btn-warning">edit</a> --}}
