@@ -4,8 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class Form extends Model
 {
+    protected $table = 'forms';
+    protected $guarded = [];
+    
     public function donasi(){
         return $this->belongsTo(Donasi::class);
     }

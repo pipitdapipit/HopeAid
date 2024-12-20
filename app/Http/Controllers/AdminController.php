@@ -136,5 +136,4 @@ class AdminController extends Controller
         $account = User::all()->where('role', 'like', 'user');
         return view('adminpage.admin_account', compact('account'));
     }
-
 }

@@ -16,20 +16,21 @@ class FormController extends Controller
     }
 
     public function formInsert(Request $req, $id){
-        // $valid = $req->validate([
-        //     'name' => 'required',
-        //     'email' => 'required',
-        //     'photo' => 'image|mimes:png,jpg,jpeg,gif|max:2048'
-        // ]);
+         $req->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'photo' => 'image|mimes:png,jpg,jpeg,gif|max:2048'
+        ]);
 
         $filePath = public_path('bukti/');
         $forms = new Form;
         $forms->user_id = Auth::user()->id;
-        $forms->donasi_id = Donasi::findOrFail($id);
+        $forms->donasi_id = $id;
         $forms->name = Auth::user()->name;
         $forms->email = Auth::user()->email;
+        $forms->no_telp = $req->input('telp');
+        $forms->notes = $req->input('notes');
         $forms->nominal = $req->input('nominal-radio') == true ? $req->input('nominal-radio') : $req->input('nominal');
-        $forms->jenis_donasi = $req->
 
         $file = $req->hasFile('photo');
         if($file){
@@ -41,8 +42,8 @@ class FormController extends Controller
         }
 
         $forms->tipe_barang = $req->input('choice');
-        $forms->save();
         // dd($req->all());
+        $forms->save();
 
         return redirect()->route('form');
     }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Donasi;
+use App\Models\JenisDonasi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -10,52 +10,52 @@ use Illuminate\Support\Facades\DB;
 class DonasiController extends Controller
 {
     public function index(){
-        $donasi = Donasi::all();
+        $donasi = JenisDonasi::all();
         $user = Auth::user();
-        return view('adminpage.donasi', compact('user','donasi'));
+        return view('adminpage.admin_TypesDonation', compact('user','donasi'));
     }
 
     public function create(){
-        return view('adminpage.create_donasi');
+        return view('adminpage.createTypesDonation');
     }
 
     public function store(Request $request)
 {
     $request->validate([
-        'jenis_donasi' => 'required|max:45',
+        'item_donasi' => 'required|max:45',
     ],
     [
-        'jenis_donasi.required' => 'Jenis Donasi wajib diisi',
+        'item_donasi.required' => 'Jenis Donasi wajib diisi',
     ]);
 
-    DB::table('donasis')->insert([
-        'jenis_donasi'=>$request->jenis_donasi,
+    DB::table('jenis_donasis')->insert([
+        'item_donasi'=>$request->item_donasi,
     ]);
 
     return redirect()->route('index.index');
     }
-    public function edit(Donasi $id)
+    public function edit(JenisDonasi $id)
     {
         //
-        return view('adminpage.edit_donasi', compact('id'));
+        return view('adminpage.updateTypesDonation', compact('id'));
     }
 
     public function update(Request $request, string $id)
 {
     // validasi data
     $request->validate([
-        'jenis_donasi' => 'required|max:45',
+        'item_donasi' => 'required|max:45',
     ],
     [
-        'jenis_donasi.required' => 'Jenis Donasi wajib diisi',
+        'item_donasi.required' => 'Jenis Donasi wajib diisi',
     ]);
 
-    DB::table('donasis')->where('id',$id)->update([
-        'jenis_donasi'=>$request->jenis_donasi,
+    DB::table('jenis_donasis')->where('id',$id)->update([
+        'item_donasi'=>$request->item_donasi,
     ]);
     return redirect()->route('index.index');
 }
-public function destroy(Donasi $id)
+public function destroy(JenisDonasi $id)
 {
     $id->delete();
 

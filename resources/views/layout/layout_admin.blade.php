@@ -60,7 +60,7 @@
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="/admin/documentation">Documentation</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
+                                    <a class="nav-link" href="/donasi">Types of Donation</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="/admin/documentation/all-accounts">
