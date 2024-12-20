@@ -16,12 +16,13 @@ Route::get('/logout', [MainController::class, 'logout']);
 
 //Kalo belom login, ga bisa akses route dibawah
 Route::middleware(['auth'])->group(function () {
-    Route::get('/form', [FormController::class, 'formPage'])->name('form');
+    Route::get('/form/{id}', [FormController::class, 'formPage'])->name('form');
     Route::post('/form', [FormController::class, 'formInsert']);
 
     Route::get('/documentation', [MainController::class, 'documentationPage']);
     Route::get('/article', [MainController::class, 'articlePage']);
-
+    Route::get('/support', [MainController::class, 'supportPage']);
+    Route::get('/support/FAQ', [MainController::class, 'FAQPage']);
 });
 
 //Route dibawah hanya bisa diakses oleh akun yang punya role admin
@@ -44,11 +45,11 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/documentation/all-accounts', [AdminController::class, 'allAccountsPage']);
 
 
-    Route::get('/donasi', 'App\Http\Controllers\DonasiController@index')->name('index.index');
-    route::get('/donasi/create', 'App\Http\Controllers\DonasiController@create')->name('index.create');
-    route::post('/donasi/store', action: 'App\Http\Controllers\DonasiController@store')->name('index.store');
-    route::get('/donasi/edit{id}', 'App\Http\Controllers\DonasiController@edit')->name('index.edit');
-    route::put('/donasi/update{id}', 'App\Http\Controllers\DonasiController@update')->name('index.update');
-    route::delete('/donasi/delete{id}', 'App\Http\Controllers\DonasiController@destroy')->name('index.destroy');
+    // Route::get('/donasi', 'App\Http\Controllers\DonasiController@index')->name('index.index');
+    // route::get('/donasi/create', 'App\Http\Controllers\DonasiController@create')->name('index.create');
+    // route::post('/donasi/store', action: 'App\Http\Controllers\DonasiController@store')->name('index.store');
+    // route::get('/donasi/edit{id}', 'App\Http\Controllers\DonasiController@edit')->name('index.edit');
+    // route::put('/donasi/update{id}', 'App\Http\Controllers\DonasiController@update')->name('index.update');
+    // route::delete('/donasi/delete{id}', 'App\Http\Controllers\DonasiController@destroy')->name('index.destroy');
 
 });

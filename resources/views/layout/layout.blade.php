@@ -39,13 +39,13 @@
                 <a class="nav-link active ms-3" aria-current="page" href="/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/article">Artikel</a>
+                <a class="nav-link" href="/article">Article</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/documentation">Documentation</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Support</a>
+                <a class="nav-link" href="/support">Support</a>
               </li>
             </ul>
             <ul class="navbar-nav ms-auto">

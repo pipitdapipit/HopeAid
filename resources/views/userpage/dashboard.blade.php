@@ -1,6 +1,6 @@
 @extends('layout.layout')
 
-@section('title', 'HopeAid')
+@section('title', 'Dashboard - HopeAid')
 
 @section('content')
 
@@ -12,13 +12,13 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="https://via.placeholder.com/2000x700" class="d-block w-100" alt="...">
+        <img src="image/carosel_1.jpg" class="d-block w-100">
       </div>
       <div class="carousel-item">
-        <img src="https://via.placeholder.com/2000x700" class="d-block w-100" alt="...">
+        <img src="image/carosel_2.jpg" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="https://via.placeholder.com/2000x700" class="d-block w-100" alt="...">
+        <img src="image/carosel_3.jpg" class="d-block w-100" alt="...">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -49,7 +49,7 @@
                         <div class="progress-bar bg-success" style="width: {{ ($item->collected/$item->target)*100 }}%">{{ round($item->collected/$item->target,3)*100 }}%</div>
                     </div>
                     <div class="d-grid">
-                        <a href="#" class="btn btn-primary">Ayo Donasi!</a>
+                        <a href="/form/{{ $item->id }}" class="btn btn-primary">Ayo Donasi!</a>
                     </div>
                 </div>
             </div>

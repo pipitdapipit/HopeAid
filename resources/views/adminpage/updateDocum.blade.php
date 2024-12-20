@@ -24,7 +24,7 @@
 
                     <label for="jenis">Deskripsi Dokumentasi:</label>
                     <input type="text" class="form-control mb-4" id="deskripsi_dokum" required name="deskripsi_dokum">
-                    
+
                     <label for="jenis">Foto Dokumentasi:</label>
                     <input type="file" class="form-control" id="photo_dokum" required name="photo_dokum" accept=".png, .jpeg, .jpg">
 

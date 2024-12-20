@@ -1,6 +1,6 @@
 @extends('layout.layout')
 
-@section('title', 'HopeAid')
+@section('title', 'Form - HopeAid')
 
 @section('content')
 
@@ -9,26 +9,20 @@
         @csrf
         <div class="fs-4">Form</div>
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label"> Name </label>
+                <label for="exampleInputEmail1" class="form-label"> Judul Donasi: </label>
+                <input value="{{ $forms->judul_donasi }}" name="judul_donasi" id="judul_donasi" type="text" class="form-control"  disabled>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label"> Name: </label>
                 <input value="{{ $user->name }}" name="name" id="name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" disabled>
             </div>
 
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label"> Email </label>
+                <label for="exampleInputPassword1" class="form-label"> Email: </label>
                 <input value="{{ $user->email }}" name="email" id="email" type="email" class="form-control" id="exampleInputPassword1" disabled >
             </div>
 
-            {{-- <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label"> Address </label>
-                <input name="address" id="address" type="text" class="form-control" id="exampleInputPassword1">
-            </div>
-
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label"> NIK </label>
-                <input name="address" id="address" type="text" class="form-control" id="exampleInputPassword1">
-            </div> --}}
-
-            {{-- <div class="form-check">
+            <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="uang-checkbox">
                 <label class="form-check-label" for="flexCheckIndeterminate">
                   Uang
@@ -37,14 +31,13 @@
 
 
               <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                  <input class="form-check-input" type="checkbox" value="" id="barang-checkbox">
                   <label class="form-check-label" for="flexCheckIndeterminate">
                       Barang
                     </label>
-                </div> --}}
+                </div>
 
-                {{-- <div id="uang-dropdown" style="display: none;"> --}}
-            <div id="uang-dropdown">
+            <div id="uang-dropdown" style="display: none;">
                 <label for="amount">Pilih Nominal</label>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="nominal-radio" id="nominal" value="10000">
@@ -75,22 +68,26 @@
                         <label for="formFile" class="form-label">Bukti Pembayaran</label>
                         <input class="form-control" type="file" name="photo" accept=".jpeg, .png, .jpg">
                       </div>
+                </div>
 
+                <div id="barang-dropdown" style="display: none;">
                     <label>Tipe Barang</label>
-                      <select id="choice" name="choice">
-                          <option value="Pakaian">Pakaian</option>
-                          <option value="Obat">Obat</option>
-                          </select>
-                    </div>
-
-            <button type="submit" class="btn btn-primary">Submit</button>
+                    <select id="choice" name="choice">
+                        <option value="Pakaian">Pakaian</option>
+                        <option value="Obat">Obat</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
 
-{{-- <script>
+<script>
     document.addEventListener('DOMContentLoaded', function () {
         const uangCheckbox = document.getElementById('uang-checkbox');
         const uangDropdown = document.getElementById('uang-dropdown');
+
+        const barangCheckbox = document.getElementById('barang-checkbox');
+        const barangDropdown = document.getElementById('barang-dropdown');
 
         uangCheckbox.addEventListener('change', function () {
             if (this.checked) {
@@ -99,7 +96,15 @@
                 uangDropdown.style.display = 'none';
             }
         });
+
+        barangCheckbox.addEventListener('change', function () {
+            if (this.checked) {
+                barangDropdown.style.display = 'block';
+            } else {
+                barangDropdown.style.display = 'none';
+            }
+        })
     });
-</script> --}}
+</script>
 
 @endsection

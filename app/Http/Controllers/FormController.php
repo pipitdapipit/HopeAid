@@ -2,18 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Donasi;
 use App\Models\Form;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class FormController extends Controller
 {
-    public function formPage(){
+    public function formPage($id){
+        $forms = Donasi::findOrFail($id);
         $user = Auth::user();
-        return view('userpage.form', compact('user'));
+        return view('userpage.form', compact('user', 'forms'));
     }
 
-    public function formInsert(Request $req){
+    public function formInsert(Request $req, $id){
         // $valid = $req->validate([
         //     'name' => 'required',
         //     'email' => 'required',
@@ -22,30 +24,21 @@ class FormController extends Controller
 
         $filePath = public_path('bukti/');
         $forms = new Form;
+        $forms->user_id = Auth::user()->id;
+        $forms->donasi_id = Donasi::findOrFail($id);
         $forms->name = Auth::user()->name;
         $forms->email = Auth::user()->email;
         $forms->nominal = $req->input('nominal-radio') == true ? $req->input('nominal-radio') : $req->input('nominal');
+        $forms->jenis_donasi = $req->
 
         $file = $req->hasFile('photo');
         if($file){
             $photo = $req->file('photo');
             $fileName = time().$photo->getClientOriginalName();
-
             $photo->move($filePath, $fileName);
 
-            // $valid['photo'] = $fileName;
             $forms->photo = $fileName;
         }
-
-
-        // $reqData = $req->all();
-        // $fileName = time().$req->file('bukti_pembayaran')->getClientOriginalName();
-        // $path = $req->file('bukti_pembayaran')->storeAs('images', $fileName, 'public');
-        // $reqData["bukti_pembayaran"] = '/storage/'.$path;
-
-        // $forms->bukti_pembayaran = $reqData["bukti_pembayaran"];
-
-        // dd($req->all());
 
         $forms->tipe_barang = $req->input('choice');
         $forms->save();

@@ -32,7 +32,7 @@ class AdminController extends Controller
             'target_donasi' => 'required|min:0|max:999999999',
             'photo_donasi' => 'image|mimes:png,jpg,jpeg,gif|max:2048'
         ]);
-        $publicPath = public_path('donation/');
+        $publicPath = public_path('image_donation/');
         $donasi = new Donasi;
         $donasi->judul_donasi = $req->input('judul_donasi');
         $donasi->deskripsi = $req->input('deskripsi_donasi');

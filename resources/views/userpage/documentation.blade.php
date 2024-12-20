@@ -1,11 +1,11 @@
 @extends('layout.layout')
 
-@section('title', 'Dokumentasi Donasi - HopeAid')
+@section('title', 'Docomentation - HopeAid')
 
 @section('content')
     <div class="container py-5">
-        <h1 class="text-center mb-4">Dokumentasi Donasi</h1>
-        <p class="text-center text-muted mb-5">
+        <h1 class="text-center mb-4 fw-bold">Dokumentasi Donasi</h1>
+        <p class="text-center text-muted mb-5 fst-italic">
             Terima kasih atas donasi Anda! Berikut adalah beberapa momen di mana donasi Anda telah membantu para korban
             bencana.
         </p>

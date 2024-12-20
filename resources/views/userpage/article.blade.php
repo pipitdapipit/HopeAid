@@ -1,10 +1,10 @@
 @extends('layout.layout')
 
-@section('title', 'HopeAid')
+@section('title', 'Article - HopeAid')
 
 @section('content')
     <div class="container-fluid d-flex flex-column align-items-center p-4">
-        <h2 class="">Article Page</h2>
+        <h2 class="mt-2 fw-bold fst-italic">Article Page</h2>
     </div>
     <div class="container d-flex flex-column align-items-center gap-4">
         <div class="card d-flex flex-row" style="width: 65rem;">

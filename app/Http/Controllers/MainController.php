@@ -30,5 +30,16 @@ class MainController extends Controller
         Auth::logout();
         return redirect()->route('login');
     }
+
+    public function supportPage(){
+        $user = Auth::user();
+        return view('userpage.support', compact('user'));
+    }
+
+    public function FAQPage(){
+        $user = Auth::user();
+        return view('userpage.faq', compact('user'));
+    }
+
 }
 
