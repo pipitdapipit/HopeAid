@@ -22,27 +22,21 @@
             </div>
 
             <div class="mb-3">
-                <label class="form-label"> No Telp: </label>
+                <label class="form-label"> No. Telp: </label>
                 <input name="telp" id="telp" type="text" class="form-control">
             </div>
 
-            {{-- <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="uang-checkbox">
-                <label class="form-check-label" for="flexCheckIndeterminate">
-                  Uang
-                </label>
-              </div>
+            <div class="radio">
+                <div class="isi-radio">
+                    <input type="radio" class="radio-field" name="jenis_donasi" value="1" id="uang-radio"> Uang
+                </div>
 
+                <div class="isi-radio">
+                    <input type="radio" class="radio-field" name="jenis_donasi" value="2" id="barang-radio"> Barang
+                </div>
+            </div>
 
-              <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="barang-checkbox">
-                  <label class="form-check-label" for="flexCheckIndeterminate">
-                      Barang
-                    </label>
-                </div> --}}
-
-            {{-- <div id="uang-dropdown" style="display: none;"> --}}
-            <div id="uang-dropdown">
+            <div id="uang-dropdown" style="display: none;">
                 <label for="amount">Pilih Nominal</label>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="nominal-radio" id="nominal" value="10000">
@@ -79,8 +73,16 @@
                 <label>Tipe Barang</label>
                 <select id="choice" name="choice">
                     <option value="Pakaian">Pakaian</option>
-                    <option value="Obat">Obat</option>
+                    <option value="Makanan">Makanan</option>
+                    <option value="Peralatan Kesehatan">Peralatan Kesehatan</option>
+                    <option value="Peralatan Dapur">Peralatan Dapur</option>
+                    <option value="Perlengkapan Kebersihan">Perlengkapan Kebersihan</option>
                 </select>
+
+                <div class="mb-3">
+                    <label class="form-label"> No. Resi: </label>
+                    <input name="resi" id="resi" type="text" class="form-control">
+                </div>
             </div>
 
             <div class="mb-3">
@@ -94,27 +96,27 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const uangCheckbox = document.getElementById('uang-checkbox');
+            const uangRadio = document.getElementById('uang-radio');
+            const barangRadio = document.getElementById('barang-radio');
             const uangDropdown = document.getElementById('uang-dropdown');
-
-            const barangCheckbox = document.getElementById('barang-checkbox');
             const barangDropdown = document.getElementById('barang-dropdown');
 
-            uangCheckbox.addEventListener('change', function() {
-                if (this.checked) {
+            function updateDropdowns() {
+                if (uangRadio.checked) {
                     uangDropdown.style.display = 'block';
+                    barangDropdown.style.display = 'none';
+                } else if (barangRadio.checked) {
+                    barangDropdown.style.display = 'block';
+                    uangDropdown.style.display = 'none';
                 } else {
                     uangDropdown.style.display = 'none';
-                }
-            });
-
-            barangCheckbox.addEventListener('change', function() {
-                if (this.checked) {
-                    barangDropdown.style.display = 'block';
-                } else {
                     barangDropdown.style.display = 'none';
                 }
-            })
+            }
+
+            // Tambahkan event listener untuk radio button
+            uangRadio.addEventListener('change', updateDropdowns);
+            barangRadio.addEventListener('change', updateDropdowns);
         });
     </script>
 

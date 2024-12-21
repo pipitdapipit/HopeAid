@@ -17,10 +17,10 @@ return new class extends Migration
             $table->unsignedBigInteger('jenis_donasi_id');
             $table->unsignedBigInteger('user_id');
             $table->integer('nominal');
-            $table->string('tipe_pembayaran');
+            $table->string('photo');
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('jenis_donasi_id')->references('id')->on('jenis_donasis')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('jenis_donasi_id')->references('id')->on('jenis_donasis')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

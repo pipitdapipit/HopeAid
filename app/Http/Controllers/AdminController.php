@@ -59,6 +59,37 @@ class AdminController extends Controller
             ->with('success','Data berhasil di hapus' );
     }
 
+    public function updateDonationPage(Donasi $id){
+        return view('adminpage.updateDonation', compact('id'));
+    }
+
+    public function updateDonation(Request $req, $id){
+        $req->validate([
+            'judul_donasi' => 'required|min:5',
+            'deskripsi_donasi' => 'required|min:5',
+            'target_donasi' => 'required|min:0|max:999999999',
+            'photo_donasi' => 'image|mimes:png,jpg,jpeg,gif|max:2048'
+        ]);
+        $publicPath = public_path('image_donation/');
+        $update_donasi = Donasi::findOrFail($id);
+        $update_donasi->judul_donasi = $req->input('judul_donasi');
+        $update_donasi->deskripsi = $req->input('deskripsi_donasi');
+        $update_donasi->collected = 0;
+        $update_donasi->target = $req->input('target_donasi');
+
+        if($req->hasFile('photo_donasi')){
+            $photo = $req->file('photo_donasi');
+            $fileName = time().$photo->getClientOriginalName();
+            $photo->move($publicPath, $fileName);
+
+            $update_donasi->donasi_photo = $fileName;
+        }
+
+        $update_donasi->save();
+
+        return redirect()->route('admin_dashboard');
+    }
+
     // Documentation Page
     public function documentPage(){
         $dokum = Documentation::all();

@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Uang extends Model
 {
-    protected $table = 'uangs';
-    protected $guarded = [];
+    protected $fillable = ['jenis_donasi_id', 'user_id', 'nominal', 'tipe_pembayaran'];
+    protected $guarded = ['created_at', 'updated_at'];
     public function jenisdonasi(){
         return $this->belongsTo(JenisDonasi::class);
     }

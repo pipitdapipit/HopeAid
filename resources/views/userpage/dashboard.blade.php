@@ -51,6 +51,8 @@
                     <div class="d-grid">
                         <a href="/form/{{ $item->id }}" class="btn btn-primary">Ayo Donasi!</a>
                     </div>
+
+                    
                 </div>
             </div>
         </div>

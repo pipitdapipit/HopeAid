@@ -32,6 +32,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/create-donation', [AdminController::class, 'createDonation']);
     Route::post('/admin/create-donation', [AdminController::class, 'insertDonation']);
     Route::post('/admin/delete-donation/{id}', [AdminController::class, 'deleteDonation']);
+    Route::get('/admin/update-donation/{id}', [AdminController::class, 'updateDonationPage']);
+    Route::post('/admin/update-donation/{id}', [AdminController::class, 'updateDonation']);
 
     //Documentation Route
     Route::get('/admin/documentation', [AdminController::class, 'documentPage'])->name('documentation_page');

@@ -16,10 +16,10 @@ return new class extends Migration
             $table->unsignedBigInteger('jenis_donasi_id');
             $table->unsignedBigInteger('user_id');
             $table->string('tipe_barang');
-            $table->string('No_Resi');
+            $table->string('no_resi');
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('jenis_donasi_id')->references('id')->on('jenis_donasis')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('jenis_donasi_id')->references('id')->on('jenis_donasis')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

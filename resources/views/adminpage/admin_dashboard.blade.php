@@ -51,16 +51,13 @@
                         <td><img src="{{ asset('image_donation/'.$item->donasi_photo) }}" width="100"></td>
                         @endif
                         <td>
-                            {{-- <a href="{{ route('index.edit', $item->id) }}" class="btn btn-sm btn-warning">edit</a> --}}
-                            <a href="#" class="btn btn-sm btn-primary">View</a>
-                            {{-- <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal{{$k->id}}"> --}}
+                            <a href="/admin/update-donation/{{ $item->id }}" class="btn btn-sm btn-warning">Edit</a>
                             <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $item->id }}">
                                 Delete
                             </button>
                         </td>
                     </tr>
-                    {{-- <div class="modal fade" id="exampleModal{{$k->id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true"> --}}
+
                     <div class="modal fade" id="exampleModal{{  $item->id  }}" tabindex="-1" aria-labelledby="exampleModalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog">
