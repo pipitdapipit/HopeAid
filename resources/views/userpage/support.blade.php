@@ -1,40 +1,92 @@
 @extends('layout.layout')
 
-@section('title', 'Support - HopeAid')
+@section('title', 'FAQ - HopeAid')
 
 @section('content')
 
-<div class="container" style="padding-top: 3%">
-    <h2 class="d-flex justify-content-center mb-4 fw-bold fst-italic">Support Page</h2>
-        <div class="d-flex justify-content-center mb-3">
-            <div class="card" style="width: 18rem;">
-                <img src="image/FAQ.jpg" class="card-img-top" height="190">
-                <div class="card-body">
-                    <h2 class="card-title d-flex justify-content-center fw-bold">FAQ</h2>
-                    <h5 class="card-text d-flex justify-content-center">Welcome to our FAQ page!</h5>
-                    <p>Here, you'll find answers to the most common questions about our products, services, and policies. We've organized this section to help you quickly find the information you need. If you don't see your question listed, feel free to contact us for further assistance. We're here to help!</p>
-                    <a href="/support/FAQ" class="btn btn-primary d-flex justify-content-center">Learn More</a>
-                </div>
-            </div>
+<div class="container mt-4">
+    <h2 class="d-flex justify-content-center mb-4 fw-bold fst-italic">Frequently Ask and Question</h2>
+    <div class="alert alert-primary" role="alert">
+        <h4 class="fw-bold">1. Apa itu website HopeAid ini?</h4>
+        Website ini adalah platform untuk menggalang dana dan barang guna membantu korban bencana alam atau kemanusiaan. Anda dapat berdonasi dalam bentuk uang maupun barang sesuai kebutuhan yang tertera pada kampanye.
+    </div>
 
-            {{-- <div class="card" style="width: 18rem;">
-                <img src="image/Get_Contact.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h2 class="card-title d-flex justify-content-center fw-bold">Get Contact</h2>
-                  <h5 class="card-text d-flex justify-content-center">Need to get in touch with us?</h5>
-                    <p>Visit our Contact Us page for all the ways you can reach us! Whether you have a question, need support, or just want to share feedback, we're here to help. You can find our email, phone number, and a contact form for your convenience. Don't hesitate to reach out!</p>
-                  <a href="#" class="btn btn-primary d-flex justify-content-center">Contact Us</a>
-                </div>
-            </div> --}}
-        </div>
-        <div class="align-items-center">
-            <p>Universitas Bina Nusantara</p>
-            <p>Jl. K. H. Syahdan No. 9, Kemanggisan, Palmerah Jakarta 11480 Indonesia</p>
-            <p>Phone: +62 21 534 5830, +62 21 535 0660 Fax +62 21 530 0244</p>
-            <p>Email: b</p>
-        </div>
+    <div class="alert alert-primary" role="alert">
+        <h4 class="fw-bold">2. Apa saja bentuk donasi yang diterima?</h4>
+        Kami menerima:
+        <ul>
+            <li class="fst-italic">Uang: Donasi finansial yang akan disalurkan langsung ke korban atau untuk pembelian kebutuhan darurat.</li>
+            <li class="fst-italic">Barang: Kebutuhan pokok seperti pakaian, makanan, obat-obatan, perlengkapan bayi, selimut, dll.</li>
+
+        </ul>
+    </div>
+
+    <div class="alert alert-primary" role="alert">
+        <h4 class="fw-bold">3. Bagaimana cara berdonasi dalam bentuk uang?</h4>
+        <ul>
+            <li>Buka form untuk donasi</li>
+            <li>Klik tombol Donasi Uang.</li>
+            <li>Masukkan jumlah donasi.</li>
+            <li>Lakukan pembayaran melalui metode yang tersedia (transfer bank, e-wallet, kartu kredit).</li>
+        </ul>
+    </div>
+
+    <div class="alert alert-primary" role="alert">
+        <h4 class="fw-bold">4. Bagaimana cara berdonasi dalam bentuk barang?</h4>
+        <ul>
+            <li>Buka form untuk donasi</li>
+            <li>Klik tombol Donasi Barang.</li>
+            <li>Lihat daftar kebutuhan yang dibutuhkan.</li>
+            <li>Kirim barang ke alamat posko yang tertera, atau jadwalkan penjemputan (jika tersedia di lokasi Anda).</li>
+        </ul>
+    </div>
+
+    <div class="alert alert-primary" role="alert">
+        <h4 class="fw-bold">5. Apakah barang donasi harus baru?</h4>
+        Tidak harus baru, tetapi kami menghimbau barang yang didonasikan berada dalam kondisi layak pakai dan higienis, terutama untuk pakaian dan perlengkapan lainnya.
+    </div>
+
+    <div class="alert alert-primary" role="alert">
+        <h4 class="fw-bold">6. Bagaimana saya tahu barang atau uang saya sampai ke yang membutuhkan?</h4>
+        Kami memastikan transparansi dengan:
+        <ul>
+            <li>Mengunggah laporan berkala tentang distribusi barang dan uang.</li>
+            <li>Menyediakan foto, video, atau bukti dokumentasi penyaluran di halaman kampanye.</li>
+        </ul>
+    </div>
+
+    <div class="alert alert-primary" role="alert">
+        <h4 class="fw-bold">7. Apa saja barang yang dibutuhkan?</h4>
+        Barang yang umumnya dibutuhkan:
+        <ul>
+            <li>Pakaian layak pakai (anak-anak dan dewasa).</li>
+            <li>Sembako (beras, mie instan, makanan kaleng).</li>
+            <li>Obat-obatan dan perlengkapan P3K.</li>
+            <li>Perlengkapan bayi (popok, susu formula).</li>
+            <li>Selimut, tikar, atau tenda darurat.</li>
+        </ul>
+        Daftar kebutuhan dapat bervariasi berdasarkan jenis bencana dan lokasi.
+    </div>
+
+    <div class="alert alert-primary" role="alert">
+        <h4 class="fw-bold">8. Apakah ada batas minimum untuk donasi uang?</h4>
+        Batas minimum donasi uang adalah Rp10.000, namun Anda bebas berdonasi sesuai kemampuan.
+    </div>
+
+    <div class="alert alert-primary" role="alert">
+        <h4 class="fw-bold">9. Apakah donasi uang dapat dikembalikan?</h4>
+        Donasi uang tidak dapat dikembalikan, kecuali jika terjadi kesalahan teknis. Hubungi tim kami jika membutuhkan bantuan terkait hal ini.
+    </div>
+
+    <div class="alert alert-primary" role="alert">
+        <h4 class="fw-bold">10. Apakah barang donasi saya aman selama proses distribusi?</h4>
+        Kami bekerja sama dengan mitra terpercaya untuk memastikan barang donasi sampai kepada penerima dengan aman dan tepat waktu.
+    </div>
+
+    <div class="alert alert-primary" role="alert">
+        <h4 class="fw-bold">11. Apakah data saya aman?</h4>
+        Keamanan data Anda adalah prioritas kami. Kami menggunakan teknologi enkripsi dan kebijakan privasi yang ketat untuk melindungi informasi Anda.
+    </div>
 </div>
 
 @endsection
-
-

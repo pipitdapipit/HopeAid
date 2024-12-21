@@ -72,7 +72,14 @@
         @yield('content')
     </main>
 
-    <footer class="text-center">
+    <footer class="text-left d-flex align-items-center justify-content-center" style="gap: 20%">
+        <div class="">
+            <p class="fw-bold">Universitas Bina Nusantara</p>
+            <p class="fw-bold">Jl. K. H. Syahdan No. 9, Kemanggisan, Palmerah Jakarta 11480 Indonesia</p>
+            <p>Phone: +62 812-1241-5818, +62 821-1319-5676, +62 897-1235-942, +62 811-1298-108, +62 857-7501-1779</p>
+            <p>Email: stephanie.hartini@binus.ac.id, david.malau@binus.ac.id, evelyn.angelica@binus.ac.id, frans.samsie@binus.ac.id, ronald.sylvester@binus.ac.id</p>
+        </div>
+
         &copy; 2024 HopeAid. All rights reserved.
     </footer>
 </body>
