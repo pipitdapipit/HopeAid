@@ -45,14 +45,23 @@
                     <p class="card-text">{{ $item->deskripsi }}</p>
                     <h5 class="card-text fw-bold">Target Donasi: Rp.{{ number_format($item->target, 2, ',', '.') }}</h5>
                     <h5 class="card-text fw-bold">Terkumpul:</h5>
-                    <div class="progress mb-3" role="progressbar" aria-label="Success example" aria-valuenow="{{ ($item->collected/$item->target)*100 }}" aria-valuemin="0" aria-valuemax="{{ $item->target }}">
-                        <div class="progress-bar bg-success" style="width: {{ ($item->collected/$item->target)*100 }}%">{{ round($item->collected/$item->target,3)*100 }}%</div>
-                    </div>
-                    <div class="d-grid">
-                        <a href="/form/{{ $item->id }}" class="btn btn-primary">Ayo Donasi!</a>
-                    </div>
 
-                    
+                    @if ($item->collected == $item->target || $item->collected > $item->target)
+                        <div class="progress mb-3" role="progressbar" aria-label="Success example" aria-valuenow="{{ ($item->collected/$item->target)*100 }}" aria-valuemin="0" aria-valuemax="{{ $item->target }}">
+                            <div class="progress-bar bg-success" style="width: 100%">100%</div>
+                        </div>
+
+                        <div class="d-grid" disabled>
+                            <button type="button" class="btn btn-primary" disabled>Target Form Sudah Terpenuhi, Terima Kasih!</button>
+                        </div>
+                    @else
+                        <div class="progress mb-3" role="progressbar" aria-label="Success example" aria-valuenow="{{ ($item->collected/$item->target)*100 }}" aria-valuemin="0" aria-valuemax="{{ $item->target }}">
+                            <div class="progress-bar bg-success" style="width: {{ ($item->collected/$item->target)*100 }}%">{{ round($item->collected/$item->target,3)*100 }}%</div>
+                        </div>
+                        <div class="d-grid">
+                            <a href="/form/{{ $item->id }}" class="btn btn-primary">Ayo Donasi!</a>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
