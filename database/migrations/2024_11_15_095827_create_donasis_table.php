@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('donasis', function (Blueprint $table) {
             $table->id();
-            $table->string('jenis_donasi');
+            $table->string('judul_donasi');
+            $table->string('deskripsi');
+            $table->decimal('target', 15, 2);
+            $table->integer('collected');
+            $table->string('donasi_photo');
             $table->timestamps();
         });
     }

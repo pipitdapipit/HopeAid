@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Donasi;
+use App\Models\JenisDonasi;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,12 +14,12 @@ class DonasiSeeder extends Seeder
      */
     public function run(): void
     {
-        Donasi::create([
-            'jenis_donasi' => 'Uang'
+        JenisDonasi::create([
+            'item_donasi' => 'Uang'
         ]);
-        
-        Donasi::create([
-            'jenis_donasi' => 'Barang'
+
+        JenisDonasi::create([
+            'item_donasi' => 'Barang'
         ]);
     }
 }
