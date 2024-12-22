@@ -17,10 +17,10 @@ class FormController extends Controller
     }
 
     public function formInsert(Request $req, $id){
-        //  $req->validate([
-        //     'no_telp' => 'required',
-        //     'photo' => 'image|mimes:png,jpg,jpeg,gif|max:2048'
-        // ]);
+         $req->validate([
+            'telp' => 'required',
+            'jenis_donasi' => 'required'
+        ]);
 
         $filePath = public_path('bukti/');
         $forms = new Form;

@@ -32,8 +32,8 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">Settings</a></li>
-                        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Activity Log</a></li>
                         <li><hr class="dropdown-divider" /></li>
                         <li><a class="dropdown-item" href="/logout">Logout</a></li>
                     </ul>
@@ -61,6 +61,8 @@
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="/admin/documentation">Documentation</a>
                                     <a class="nav-link" href="/donasi">Types of Donation</a>
+                                    <a class="nav-link" href="/admin/list-of-uang">List of Uang</a>
+                                    <a class="nav-link" href="/admin/list-of-barang">List of Barang</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="/admin/documentation/all-accounts">
@@ -68,7 +70,7 @@
                                 All Accounts
                                 {{-- <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div> --}}
                             </a>
-                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion" style="display: none;">
+                            {{-- <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion" style="display: none;">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
                                         Authentication
@@ -93,9 +95,9 @@
                                         </nav>
                                     </div>
                                 </nav>
-                            </div>
+                            </div> --}}
 
-                            <div class="sb-sidenav-menu-heading" style="display: none;">Addons</div>
+                            {{-- <div class="sb-sidenav-menu-heading" style="display: none;">Addons</div>
                             <a class="nav-link" href="charts.html" style="display: none;">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Charts
@@ -105,11 +107,11 @@
                                 Tables
                             </a>
                         </div>
-                    </div>
-                    <div class="sb-sidenav-footer">
+                    </div> --}}
+                    {{-- <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
                         Start Bootstrap
-                    </div>
+                    </div> --}}
                 </nav>
             </div>
 

@@ -3,11 +3,9 @@
 @section('title', 'Form - HopeAid')
 
 @section('content')
-
-    <div class="container min-vh-100 d-flex justify-content-center align-items-center">
-        <form method="POST" action="/form/{{ $forms->id }}" enctype="multipart/form-data">
+    <div class="container d-flex justify-content-center align-items-center" style="padding-top: 8%; padding-bottom: 8%;">
+        <form method="POST" action="/form/{{ $forms->id }}" enctype="multipart/form-data" style="padding: 4%; border: 2px solid black; border-radius: 15px">
             @csrf
-
             <div class="fs-4">Form <span class="fw-bold">{{ $forms->judul_donasi }}</span></div>
             <div class="mb-3">
                 <label class="form-label"> Name: </label>
@@ -61,7 +59,7 @@
                     <input name="nominal" id="nominal" type="number" class="form-control" id="exampleInputPassword1">
                 </div>
 
-                <label class="fw-bold"> --- Gambar QR ---</label>
+                <img src="{{ asset('image/qr_pembayaran.jpg') }}" alt="" width="300" class="pb-4">
 
                 <div class="mb-3">
                     <label for="formFile" class="form-label">Bukti Pembayaran</label>
@@ -90,7 +88,9 @@
                 <input name="notes" id="telp" type="text" class="form-control">
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
         </form>
     </div>
 

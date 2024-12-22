@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Barang;
 use App\Models\Documentation;
 use App\Models\Donasi;
 use App\Models\Form;
+use App\Models\Uang;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -163,8 +165,25 @@ class AdminController extends Controller
         return redirect()->route('documentation_page');
     }
 
+    //Check All Accounts that have been registered
     public function allAccountsPage(){
         $account = User::all()->where('role', 'like', 'user');
         return view('adminpage.admin_account', compact('account'));
+    }
+
+    //List of Uang
+    public function UangPage(){
+        $uang = Uang::all();
+        $user = Auth::user();
+
+        return view('adminpage.admin_uang', compact('uang', 'user'));
+    }
+
+    //List of Barang
+    public function BarangPage(){
+        $barang = Barang::all();
+        $user = Auth::user();
+
+        return view('adminpage.admin_barang', compact('barang', 'user'));
     }
 }

@@ -54,4 +54,9 @@ Route::middleware(['auth', 'admin'])->group(function () {
     route::put('/donasi/update{id}', 'App\Http\Controllers\DonasiController@update')->name('index.update');
     route::delete('/donasi/delete{id}', 'App\Http\Controllers\DonasiController@destroy')->name('index.destroy');
 
+    //List of Uang
+    Route::get('/admin/list-of-uang', [AdminController::class, 'UangPage']);
+
+    //List of Barang
+    Route::get('/admin/list-of-barang', [AdminController::class, 'BarangPage']);
 });

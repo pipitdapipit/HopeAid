@@ -72,7 +72,7 @@
         @yield('content')
     </main>
 
-    <footer class="text-left d-flex align-items-center justify-content-center" style="gap: 20%">
+    <footer class="text-left d-flex align-items-center justify-content-center" style="gap: 10%">
         <div class="">
             <p class="fw-bold">Universitas Bina Nusantara</p>
             <p class="fw-bold">Jl. K. H. Syahdan No. 9, Kemanggisan, Palmerah Jakarta 11480 Indonesia</p>
