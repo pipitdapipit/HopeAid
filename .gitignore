@@ -5,6 +5,7 @@
 /public/storage
 /storage/*.key
 /storage/pail
+.env
 .env.backup
 .env.production
 .phpactor.json
@@ -18,4 +19,4 @@ yarn-error.log
 /.idea
 /.vscode
 /.zed
-.env
+.vendor
